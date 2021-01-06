@@ -1,0 +1,43 @@
+{
+  "name": "anime_higher_lower",
+  "version": "1.0.0",
+  "description": "Share and view reviews for your favourite drinks.",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "start": "node index.js",
+    "start-watch": "nodemon index.js",
+    "dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeyin97/anime_higher_or_lower.git"
+  },
+  "author": "Mike Yin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikeyin97/anime_higher_or_lower/issues"
+  },
+  "homepage": "https://github.com/mikeyin97/anime_higher_or_lower#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.10",
+    "namor": "^2.0.2",
+    "react-bootstrap": "^1.4.0",
+    "react-modal": "^3.12.1",
+    "react-table": "^7.6.2",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "10.16.3"
+  }
+}
