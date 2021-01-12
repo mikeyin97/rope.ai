@@ -13,18 +13,21 @@ class Button extends Component {
 
   checkCorrect() {
     // clicked by, points value
-    if (this.props.correct === true) {
-      this.setState({
-        background: '#00ff00',
-        color: "#ffffff"
-      });
-    } else {
-      this.setState({
-        background: '#ff0000',
-        color: "#ffffff"
-      });
+    if (!this.props.clicked){
+      if (this.props.correct === true) {
+        this.setState({
+          background: '#00ff00',
+          color: "#ffffff"
+        });
+      } else {
+        this.setState({
+          background: '#ff0000',
+          color: "#ffffff"
+        });
+      }
+      this.props.incrementQuestion();
+      this.props.markClicked();
     }
-    this.props.incrementQuestion();
   }
   
   render() {

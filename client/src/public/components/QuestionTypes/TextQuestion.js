@@ -9,14 +9,27 @@ class TextQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      buttonHidden: true
     };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        buttonHidden: false
+      })
+    }, 1000);
   }
   
   render() {
+    var buttons; 
+    if (!this.state.buttonHidden){
+      buttons = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
+    }
     return (
       <div className="TextQuestion">
         <QuestionText text={this.props.text}></QuestionText>
-        <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
+        {buttons}
       </div>
     )
   }
