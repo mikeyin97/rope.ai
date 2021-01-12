@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 
-class Video extends Component {
+class YoutubeVideo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,12 +11,10 @@ class Video extends Component {
   render() {
     return (
       <div className = "VideoDiv">
-        <video src="https://animethemes.moe/video/SwordArtOnlineAlicization-ED3.webm" controls>
-          Your browser does not support the video tag.
-        </video>
+        <YouTube videoId={this.props.videoId}/>
       </div>   
     )
   }
 }
 
-export default Video;
+export default YoutubeVideo;

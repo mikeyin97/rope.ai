@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TextQuestion from './QuestionTypes/TextQuestion.js';
+import ImageQuestion from './QuestionTypes/ImageQuestion.js';
+import YoutubeVideoQuestion from './QuestionTypes/YoutubeVideoQuestion.js';
 
 class Quiz extends Component {
   // Props
@@ -21,7 +23,11 @@ class Quiz extends Component {
           currQuestion: currQuestion + 1
         })
       }
-    }, 5000);
+    }, 1000);
+  }
+
+  finishQuiz() {
+
   }
   
   render() {
@@ -30,6 +36,10 @@ class Quiz extends Component {
     var question;
     if (questions[this.state.currQuestion].type === "text") {
       question =  <TextQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></TextQuestion>;
+    } else if (questions[this.state.currQuestion].type === "image") {
+      question =  <ImageQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></ImageQuestion>;
+    } else if (questions[this.state.currQuestion].type === "youtubevideo") {
+      question =  <YoutubeVideoQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></YoutubeVideoQuestion>;
     }
 
     return (

@@ -14,13 +14,11 @@ class Button extends Component {
   checkCorrect() {
     // clicked by, points value
     if (this.props.correct === true) {
-      alert("HI");
       this.setState({
         background: '#00ff00',
         color: "#ffffff"
       });
     } else {
-      alert("Bye");
       this.setState({
         background: '#ff0000',
         color: "#ffffff"
