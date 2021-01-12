@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextQuestion from './QuestionTypes/TextQuestion.js';
 import ImageQuestion from './QuestionTypes/ImageQuestion.js';
 import MediaQuestion from './QuestionTypes/MediaQuestion.js';
+import TextAnswer from './QuestionTypes/QuestionComponents/TextAnswer.js'
 
 class Quiz extends Component {
   // Props
@@ -45,6 +46,7 @@ class Quiz extends Component {
     return (
       <div className="Quiz">
         {question}
+        <TextAnswer></TextAnswer>
       </div>
     )
   }
