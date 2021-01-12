@@ -12,7 +12,6 @@ class ButtonArray extends Component {
     return (
       <div className="ButtonArray">
         {this.props.buttonValues.map((items) => {
-          console.log(items);
           return <Button key={items.key} text={items.text} correct={items.correct}></Button>
         })}
       </div>
