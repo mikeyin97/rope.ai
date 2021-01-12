@@ -7,18 +7,34 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currQuestion: 0,
     };
+    this.incrementQuestion = this.incrementQuestion.bind(this);
+  }
+
+  incrementQuestion() {
+    var currQuestion = this.state.currQuestion;
+    var questions = this.props.questions;
+    setTimeout(() => {
+      if (currQuestion < questions.length - 1) {
+        this.setState({
+          currQuestion: currQuestion + 1
+        })
+      }
+    }, 5000);
   }
   
   render() {
+    var questions = this.props.questions;
+
+    var question;
+    if (questions[this.state.currQuestion].type === "text") {
+      question =  <TextQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></TextQuestion>;
+    }
+
     return (
       <div className="Quiz">
-        {this.props.questions.map((items) => {
-          if (items.type === "text") {
-            return <TextQuestion {...items}></TextQuestion>
-          }
-          return 0
-        })}
+        {question}
       </div>
     )
   }

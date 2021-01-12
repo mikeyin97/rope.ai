@@ -16,7 +16,7 @@ class TextQuestion extends Component {
     return (
       <div className="TextQuestion">
         <QuestionText text={this.props.text}></QuestionText>
-        <ButtonArray buttonValues={this.props.buttonValues}></ButtonArray>
+        <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
       </div>
     )
   }

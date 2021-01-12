@@ -11,7 +11,7 @@ class Button extends Component {
     this.checkCorrect = this.checkCorrect.bind(this);
   }
 
-  checkCorrect () {
+  checkCorrect() {
     // clicked by, points value
     if (this.props.correct === true) {
       alert("HI");
@@ -26,6 +26,7 @@ class Button extends Component {
         color: "#ffffff"
       });
     }
+    this.props.incrementQuestion();
   }
   
   render() {
