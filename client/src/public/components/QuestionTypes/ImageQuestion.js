@@ -10,28 +10,29 @@ class ImageQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonHidden: true
+      answerHidden: true
     };
   }
   
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        buttonHidden: false
+        answerHidden: false
       })
     }, 1000);
   }
   
   render() {
-    var buttons; 
-    if (!this.state.buttonHidden){
-      buttons = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
+    var answer; 
+    
+    if (!this.state.answerHidden){
+      answer = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.answerData.buttonValues}></ButtonArray>
     }
     return (
       <div className="TextQuestion">
-        <QuestionText text={this.props.text}></QuestionText>
-        <Image imgURL={this.props.imgURL}></Image>
-        {buttons}
+        <QuestionText text={this.props.questionData.text}></QuestionText>
+        <Image imgURL={this.props.questionData.imgURL}></Image>
+        {answer}
       </div>
     )
   }

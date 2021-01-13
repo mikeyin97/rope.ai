@@ -10,7 +10,7 @@ class MediaQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonHidden: true,
+      answerHidden: true,
       mediaMounted: false
     };
     this.checkMediaMounted = this.checkMediaMounted.bind(this);
@@ -19,21 +19,21 @@ class MediaQuestion extends Component {
   checkMediaMounted() {
     setTimeout(() => {
       this.setState({
-        buttonHidden: false
+        answerHidden: false
       })
     }, 2000);
   }
   
   render() {
-    var buttons; 
-    if (!this.state.buttonHidden){
-      buttons = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
+    var answer; 
+    if (!this.state.answerHidden){
+      answer = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.answerData.buttonValues}></ButtonArray>
     }
     return (
       <div className="TextQuestion">
-        <QuestionText text={this.props.text}></QuestionText>
-        <MediaPlayer checkMediaMounted={this.checkMediaMounted} videoId={this.props.videoId}></MediaPlayer>
-        {buttons}
+        <QuestionText text={this.props.questionData.text}></QuestionText>
+        <MediaPlayer checkMediaMounted={this.checkMediaMounted} videoId={this.props.questionData.videoId}></MediaPlayer>
+        {answer}
       </div>
     )
   }

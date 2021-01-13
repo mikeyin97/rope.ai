@@ -22,8 +22,7 @@ class TextAnswer extends Component {
       this.setState({
         submitted: true
       })
-      // this.props.incrementQuestion();
-      // this.props.markClicked();
+      this.props.incrementQuestion();
     }
   }
   

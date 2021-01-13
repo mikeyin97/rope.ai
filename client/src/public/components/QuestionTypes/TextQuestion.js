@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ButtonArray from './QuestionComponents/ButtonArray.js';
 import QuestionText from './QuestionComponents/QuestionText.js';
+import TextAnswer from './QuestionComponents/TextAnswer.js';
 
 class TextQuestion extends Component {
   // PROPS
@@ -9,27 +10,32 @@ class TextQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonHidden: true
+      answerHidden: true
     };
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        buttonHidden: false
+        answerHidden: false
       })
     }, 1000);
   }
   
   render() {
-    var buttons; 
-    if (!this.state.buttonHidden){
-      buttons = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.buttonValues}></ButtonArray>
+    var answer; 
+    console.log(this.props.answe);
+    if (!this.state.answerHidden){
+      if (this.props.answerType === "buttons"){
+        answer = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.answerData.buttonValues}></ButtonArray>
+      } else if (this.props.answerType === "text"){
+        answer = <TextAnswer incrementQuestion={this.props.incrementQuestion} answer={this.props.answerData.answer}></TextAnswer>
+      }
     }
     return (
       <div className="TextQuestion">
-        <QuestionText text={this.props.text}></QuestionText>
-        {buttons}
+        <QuestionText text={this.props.questionData.text}></QuestionText>
+        {answer}
       </div>
     )
   }

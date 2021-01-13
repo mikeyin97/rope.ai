@@ -10,44 +10,59 @@ const App = () => {
         [
           {
             key: 1,
-            type: "text",
-            text: "Click on Bye",
-            buttonValues: 
-              [{
-                key: 1,
-                text: "hi",
-                correct: false, 
+            questionType: "text",
+            questionData: {
+              text: "Click on Bye",
+            },
+            answerType: "text",
+            answerData: {
+              answer: "Bye"
+              // buttonValues: 
+              // [{
+              //   key: 1,
+              //   text: "hi",
+              //   correct: false, 
                 
-              }, 
-              {
-                key: 2,
-                text: "bye",
-                correct: true, 
-              }]
+              // }, 
+              // {
+              //   key: 2,
+              //   text: "bye",
+              //   correct: true, 
+              // }]
+            }
           }, 
           {
             key: 2,
-            type: "text",
-            text: "Hello",
-            buttonValues:  
+            questionType: "text",
+            questionData: {
+              text: "Hello",
+            },
+            answerType: "buttons",
+            answerData: {
+              buttonValues: 
               [{
                 key: 1,
-                text: "hi",
-                correct: true, 
+                text: "noob",
+                correct: false, 
                 
               }, 
               {
                 key: 2,
-                text: "bye",
-                correct: false, 
+                text: "hello",
+                correct: true, 
               }]
+            }
           },
           {
             key: 3,
-            type: "image",
-            text: "Who this",
-            imgURL: "https://i.imgur.com/2v8z2Z7.jpg",
-            buttonValues:  
+            questionType: "image",
+            questionData: {
+              text: "Who this",
+              imgURL: "https://i.imgur.com/2v8z2Z7.jpg",
+            },
+            answerType: "button",
+            answerData: {
+              buttonValues:  
               [{
                 key: 1,
                 text: "elaina",
@@ -59,24 +74,30 @@ const App = () => {
                 text: "saya",
                 correct: false, 
               }]
+            }
           },
           {
             key: 4,
-            type: "youtubevideo",
-            videoId: "https://www.youtube.com/watch?v=dDR1DFtik0E",
-            text: "Hello",
-            buttonValues:  
+            questionType: "media",
+            questionData: {
+              text: "Song Name",
+              videoId: "https://www.youtube.com/watch?v=dDR1DFtik0E",
+            },
+            answerType: "button",
+            answerData: {
+              buttonValues:  
               [{
                 key: 1,
-                text: "elaina",
+                text: "Deadman",
                 correct: true, 
                 
               }, 
               {
                 key: 2,
-                text: "saya",
+                text: "Wonderland",
                 correct: false, 
               }]
+            } 
           }
         ]
       }></Quiz>

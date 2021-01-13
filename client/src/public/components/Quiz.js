@@ -35,18 +35,18 @@ class Quiz extends Component {
     var questions = this.props.questions;
 
     var question;
-    if (questions[this.state.currQuestion].type === "text") {
+    if (questions[this.state.currQuestion].questionType === "text") {
       question =  <TextQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></TextQuestion>;
-    } else if (questions[this.state.currQuestion].type === "image") {
+    } else if (questions[this.state.currQuestion].questionType === "image") {
       question =  <ImageQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></ImageQuestion>;
-    } else if (questions[this.state.currQuestion].type === "youtubevideo") {
+    } else if (questions[this.state.currQuestion].questionType === "media") {
       question =  <MediaQuestion {...questions[this.state.currQuestion]} incrementQuestion={this.incrementQuestion}></MediaQuestion>;
     }
 
     return (
       <div className="Quiz">
         {question}
-        <TextAnswer></TextAnswer>
+        {/* <TextAnswer></TextAnswer> */}
       </div>
     )
   }
