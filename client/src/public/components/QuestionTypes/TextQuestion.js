@@ -24,12 +24,11 @@ class TextQuestion extends Component {
   
   render() {
     var answer; 
-    console.log(this.props.answe);
     if (!this.state.answerHidden){
       if (this.props.answerType === "buttons"){
         answer = <ButtonArray incrementQuestion={this.props.incrementQuestion} buttonValues={this.props.answerData.buttonValues}></ButtonArray>
       } else if (this.props.answerType === "text"){
-        answer = <TextAnswer incrementQuestion={this.props.incrementQuestion} answer={this.props.answerData.answer}></TextAnswer>
+        answer = <TextAnswer incrementQuestion={this.props.incrementQuestion} answers={this.props.answerData.answers}></TextAnswer>
       }
     }
     return (

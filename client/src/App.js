@@ -16,19 +16,7 @@ const App = () => {
             },
             answerType: "text",
             answerData: {
-              answer: "Bye"
-              // buttonValues: 
-              // [{
-              //   key: 1,
-              //   text: "hi",
-              //   correct: false, 
-                
-              // }, 
-              // {
-              //   key: 2,
-              //   text: "bye",
-              //   correct: true, 
-              // }]
+              answers: ["Bye"]
             }
           }, 
           {
@@ -60,7 +48,7 @@ const App = () => {
               text: "Who this",
               imgURL: "https://i.imgur.com/2v8z2Z7.jpg",
             },
-            answerType: "button",
+            answerType: "buttons",
             answerData: {
               buttonValues:  
               [{
@@ -83,7 +71,7 @@ const App = () => {
               text: "Song Name",
               videoId: "https://www.youtube.com/watch?v=dDR1DFtik0E",
             },
-            answerType: "button",
+            answerType: "buttons",
             answerData: {
               buttonValues:  
               [{
