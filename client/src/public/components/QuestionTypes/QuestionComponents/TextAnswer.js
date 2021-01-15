@@ -17,6 +17,7 @@ class TextAnswer extends Component {
   }
 
   checkCorrect(e) {
+    e.preventDefault();
     var answers = this.props.answers.map(v => v.toLowerCase());
     // clicked by, points value
     if (!this.state.submitted){
@@ -34,6 +35,7 @@ class TextAnswer extends Component {
       }
       this.props.incrementQuestion();
     }
+    return false;
   }
   
   render() {

@@ -1,96 +1,34 @@
-import React from 'react';
-import Quiz from './public/components/Quiz.js';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import './public/stylesheets/App.css';
+import Home from "./public/components/Home.js";
+import Lobby from "./public/components/Lobby.js";
 
-const App = () => {
+function App() {
   return (
-    <div id = "App">
-      <Quiz questions={
-        [
-          {
-            key: 1,
-            questionType: "text",
-            questionData: {
-              text: "Click on Bye",
-            },
-            answerType: "text",
-            answerData: {
-              answers: ["Bye"]
-            }
-          }, 
-          {
-            key: 2,
-            questionType: "text",
-            questionData: {
-              text: "Hello",
-            },
-            answerType: "buttons",
-            answerData: {
-              buttonValues: 
-              [{
-                key: 1,
-                text: "noob",
-                correct: false, 
-                
-              }, 
-              {
-                key: 2,
-                text: "hello",
-                correct: true, 
-              }]
-            }
-          },
-          {
-            key: 3,
-            questionType: "image",
-            questionData: {
-              text: "Who this",
-              imgURL: "https://i.imgur.com/2v8z2Z7.jpg",
-            },
-            answerType: "buttons",
-            answerData: {
-              buttonValues:  
-              [{
-                key: 1,
-                text: "elaina",
-                correct: true, 
-                
-              }, 
-              {
-                key: 2,
-                text: "saya",
-                correct: false, 
-              }]
-            }
-          },
-          {
-            key: 4,
-            questionType: "media",
-            questionData: {
-              text: "Song Name",
-              videoId: "https://www.youtube.com/watch?v=dDR1DFtik0E",
-            },
-            answerType: "buttons",
-            answerData: {
-              buttonValues:  
-              [{
-                key: 1,
-                text: "Deadman",
-                correct: true, 
-                
-              }, 
-              {
-                key: 2,
-                text: "Wonderland",
-                correct: false, 
-              }]
-            } 
-          }
-        ]
-      }></Quiz>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/:roomId" component={Lobby} />
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
+// import React from 'react';
+// import Quiz from './public/components/Quiz.js';
+
+// import './public/stylesheets/App.css';
+
+// const App = () => {
+//   return (
+//     <div id = "App">
+      
+//     </div>
+//   );
+// }
+
+// export default App;
